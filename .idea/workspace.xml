@@ -4,7 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="293ab6ee-5a8f-475e-9f50-f9055202f388" name="Changes" comment="" />
+    <list default="true" id="293ab6ee-5a8f-475e-9f50-f9055202f388" name="Changes" comment="Base SpringBoot Project">
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/credit-application-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/credit-application-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/credit-application-service/src/main/java/com/coopcredit/credit_application_service/CreditApplicationServiceApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/credit-application-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/credit-application-service/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/credit-application-service/src/test/java/com/coopcredit/credit_application_service/CreditApplicationServiceApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/credit-application-service/src/test/java/com/coopcredit/credit_application_service/TestCreditApplicationServiceApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/credit-application-service/src/test/java/com/coopcredit/credit_application_service/TestcontainersConfiguration.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/risk-central-mock-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/risk-central-mock-service/pom.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -36,8 +47,15 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "develop",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "SHELLCHECK.PATH": "/home/Coder/.local/share/JetBrains/IntelliJIdea2025.2/Shell Script/shellcheck",
+    "Spring Boot.CreditApplicationServiceApplication.executor": "Run",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "/home/Coder/CoopCredit-System",
     "node.js.detected.package.eslint": "true",
@@ -45,11 +63,45 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.2",
     "run.configurations.included.in.services": "true",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RunManager" selected="Spring Boot.RiskCentralApplication">
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/credit-application-service/src/test.bak/java/com/coopcredit/credit_application_service" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.coopcredit.credit_application_service" />
+      <recent name="com.coopcredit" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="configurationTypes">
+      <set>
+        <option value="KtorApplicationConfigurationType" />
+        <option value="MicronautRunConfigurationType" />
+        <option value="QuarkusRunConfigurationType" />
+        <option value="SpringBootApplicationConfigurationType" />
+      </set>
+    </option>
+    <option name="configurationStatuses">
+      <map>
+        <entry key="SpringBootApplicationConfigurationType">
+          <value>
+            <map>
+              <entry key="CreditApplicationServiceApplication" value="STOPPED" />
+            </map>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="RunManager" selected="Spring Boot.CreditApplicationServiceApplication">
     <configuration name="CreditApplicationService" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
       <module name="Core Microservice" />
@@ -59,9 +111,19 @@
       </method>
     </configuration>
     <configuration name="CreditApplicationServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <option name="ALTERNATIVE_JRE_PATH" value="BUNDLED" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
       <module name="Core Microservice" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.coopcredit.credit_application_service.CreditApplicationServiceApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CreditApplicationService" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
+      <module name="Core Microservice" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.coopcredit.credit_application_service.CreditApplicationService" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -82,6 +144,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="Spring Boot.CreditApplicationService" />
+      <item itemvalue="Spring Boot.CreditApplicationServiceApplication" />
+      <item itemvalue="Spring Boot.RiskCentralApplication" />
+      <item itemvalue="Spring Boot.RiskCentralMockServiceApplication" />
+    </list>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -99,11 +167,37 @@
       <option name="presentableId" value="Default" />
       <updated>1765306549251</updated>
       <workItem from="1765306550490" duration="2542000" />
-      <workItem from="1765309128327" duration="532000" />
+      <workItem from="1765309128327" duration="7082000" />
+      <workItem from="1765316883410" duration="4000" />
+      <workItem from="1765316894519" duration="5735000" />
     </task>
+    <task id="LOCAL-00001" summary="Base SpringBoot Project">
+      <option name="closed" value="true" />
+      <created>1765309681339</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1765309681339</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Base SpringBoot Project" />
+    <option name="LAST_COMMIT_MESSAGE" value="Base SpringBoot Project" />
   </component>
 </project>
