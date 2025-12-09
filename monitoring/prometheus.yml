@@ -1,0 +1,42 @@
+# Configuración Global de Prometheus
+global:
+  scrape_interval: 15s       # Frecuencia de recolección de métricas
+  evaluation_interval: 15s   # Frecuencia de evaluación de reglas
+  external_labels:
+    cluster: 'coopcredit-cluster'
+    environment: 'development'
+
+# Configuración de Scrape (Recolección)
+scrape_configs:
+  # Prometheus auto-monitoreo
+  - job_name: 'prometheus'
+    static_configs:
+      - targets: ['localhost:9090']
+        labels:
+          service: 'prometheus'
+
+  # Credit Application Service
+  - job_name: 'credit-application-service'
+    metrics_path: '/actuator/prometheus'
+    scrape_interval: 15s
+    static_configs:
+      - targets: ['credit-application-service:8080']
+        labels:
+          application: 'credit-application-service'
+          service: 'backend'
+          team: 'credit'
+
+  # Risk Central Mock Service
+  - job_name: 'risk-central-mock-service'
+    metrics_path: '/actuator/prometheus'
+    scrape_interval: 15s
+    static_configs:
+      - targets: ['risk-central-mock-service:8081']
+        labels:
+          application: 'risk-central-mock-service'
+          service: 'backend'
+          team: 'risk'
+
+# Reglas de Alerta (opcional)
+# rule_files:
+#   - 'alerts/*.yml'

@@ -63,6 +63,7 @@ Esto iniciará automáticamente:
 - [Solución de Problemas]()
 - [Docker]()
 - [Observabilidad]()
+- [**📊 Integración con Grafana**](./GRAFANA_INTEGRATION_GUIDE.md) ⭐
 
 ---
 
@@ -125,6 +126,8 @@ credit-application-service/
 | **credit-application-service** | 8080 | Servicio principal de gestión de créditos |
 | **risk-central-mock-service** | 8081 | Servicio simulado de evaluación de riesgo |
 | **MySQL** | 3306 | Base de datos relacional |
+| **Prometheus** | 9090 | Recolección de métricas |
+| **Grafana** | 3000 | Visualización de métricas y dashboards |
 
 ---
 
@@ -289,7 +292,9 @@ Una vez iniciado el sistema:
 | **Swagger UI** | http://localhost:8080/swagger-ui.html | Documentación interactiva ⭐ |
 | **API Docs** | http://localhost:8080/v3/api-docs | OpenAPI JSON |
 | **Health Check** | http://localhost:8080/actuator/health | Estado del servicio |
-| **Prometheus** | http://localhost:8080/actuator/prometheus | Métricas |
+| **Actuator Prometheus** | http://localhost:8080/actuator/prometheus | Métricas exportadas |
+| **Prometheus UI** | http://localhost:9090 | Interfaz de Prometheus |
+| **Grafana** | http://localhost:3000 | Dashboards de métricas ⭐ |
 
 ---
 
@@ -661,6 +666,20 @@ docker build -t coopcredit/risk-central-mock:latest ./risk-central-mock-service
 
 ## 📊 Observabilidad
 
+El sistema incluye un stack completo de observabilidad con **Prometheus** y **Grafana**.
+
+### 🎯 Guía Completa de Grafana
+
+📘 **[Ver Guía de Integración con Grafana](./GRAFANA_INTEGRATION_GUIDE.md)**
+
+Incluye:
+- Configuración paso a paso de Prometheus y Grafana
+- Dashboards pre-configurados para Spring Boot
+- Métricas de negocio personalizadas
+- Alertas configurables
+- Queries PromQL útiles
+- Troubleshooting completo
+
 ### Health Check
 ```bash
 curl http://localhost:8080/actuator/health
@@ -678,7 +697,20 @@ curl http://localhost:8080/actuator/metrics/jvm.memory.used
 
 ### Prometheus
 ```bash
+# Métricas en formato Prometheus
 curl http://localhost:8080/actuator/prometheus
+
+# Interfaz web de Prometheus
+open http://localhost:9090
+```
+
+### Grafana
+```bash
+# Acceder a Grafana
+open http://localhost:3000
+
+# Usuario: admin
+# Contraseña: admin123
 ```
 
 ### Logs Estructurados
