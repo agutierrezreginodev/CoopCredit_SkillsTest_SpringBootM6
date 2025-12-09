@@ -1,0 +1,15 @@
+global:
+  scrape_interval: 15s
+  evaluation_interval: 15s
+  external_labels:
+    monitor: 'risk-central-monitor'
+
+scrape_configs:
+  - job_name: 'risk-central-mock-service'
+    metrics_path: '/actuator/prometheus'
+    scrape_interval: 5s
+    static_configs:
+      - targets: ['host.docker.internal:8081']
+        labels:
+          application: 'risk-central-mock-service'
+          environment: 'local'

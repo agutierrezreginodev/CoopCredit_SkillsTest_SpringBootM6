@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: risk-central-mock-service
+    runtime: docker
+    dockerfilePath: ./Dockerfile
+    envVars:
+      - key: JAVA_OPTS
+        value: "-Xmx512m -Xms256m"
+      - key: SERVER_PORT
+        value: "8081"
+    healthCheckPath: /actuator/health
+    plan: free
+    region: oregon
+    autoDeploy: true

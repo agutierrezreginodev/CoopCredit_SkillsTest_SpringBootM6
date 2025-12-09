@@ -1,0 +1,107 @@
+spring:
+  application:
+    name: credit-application-service
+  
+  # Configuración de base de datos MySQL
+  datasource:
+    url: jdbc:mysql://localhost:3306/coopcredit_db?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true
+    username: coopcredit
+    password: coopcredit
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    hikari:
+      maximum-pool-size: 10
+      minimum-idle: 5
+      connection-timeout: 30000
+  
+  # Configuración de JPA/Hibernate
+  jpa:
+    hibernate:
+      ddl-auto: validate  # Flyway maneja el schema
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+        dialect: org.hibernate.dialect.MySQLDialect
+        jdbc:
+          batch_size: 20
+        order_inserts: true
+        order_updates: true
+  
+  # Configuración de Flyway
+  flyway:
+    enabled: true
+    baseline-on-migrate: true
+    locations: classpath:db/migration
+    validate-on-migrate: true
+
+# Configuración del servidor
+server:
+  port: 8080
+  error:
+    include-message: always
+    include-binding-errors: always
+    include-stacktrace: never
+    include-exception: false
+
+# Configuración JWT
+jwt:
+  secret: mySecretKeyForCoopCreditSystemMustBeLongEnough12345678901234567890
+  expiration: 86400000  # 24 horas en milisegundos
+
+# Configuración de servicio externo de riesgo
+risk:
+  central:
+    url: http://localhost:8081/risk-evaluation
+
+# Configuración de CORS
+cors:
+  allowed-origins: http://localhost:4200,http://localhost:3000
+
+# Configuración de Actuator (Observabilidad)
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics,prometheus
+      base-path: /actuator
+  endpoint:
+    health:
+      show-details: always
+    metrics:
+      enabled: true
+  metrics:
+    export:
+      prometheus:
+        enabled: true
+    tags:
+      application: ${spring.application.name}
+
+# Información de la aplicación
+info:
+  app:
+    name: CoopCredit Application Service
+    description: Sistema de Gestión de Solicitudes de Crédito
+    version: 1.0.0
+    encoding: UTF-8
+    java:
+      version: 17
+
+# Configuración de logging
+logging:
+  level:
+    root: INFO
+    com.coopcredit: DEBUG
+    org.springframework.security: DEBUG
+    org.hibernate.SQL: DEBUG
+    org.hibernate.type.descriptor.sql.BasicBinder: TRACE
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss} - %msg%n"
+    file: "%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n"
+
+# Configuración de Swagger/OpenAPI
+springdoc:
+  api-docs:
+    path: /v3/api-docs
+  swagger-ui:
+    path: /swagger-ui.html
+    enabled: true

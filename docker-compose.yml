@@ -1,0 +1,123 @@
+services:
+  # Base de datos MySQL
+  db:
+    image: mysql:8.0
+    container_name: coopcredit-db
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: coopcredit_db
+      MYSQL_USER: coopcredit
+      MYSQL_PASSWORD: coopcredit
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+    networks:
+      - coopcredit-network
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "root", "-proot"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # Servicio Mock de Central de Riesgo
+  risk-central-mock-service:
+    build:
+      context: ./risk-central-mock-service
+      dockerfile: Dockerfile
+    container_name: risk-central-mock
+    ports:
+      - "8081:8081"
+    networks:
+      - coopcredit-network
+    healthcheck:
+      test: ["CMD", "wget", "--quiet", "--tries=1", "--spider", "http://localhost:8081/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    restart: unless-stopped
+
+  # Servicio Principal de Solicitudes de Crédito
+  credit-application-service:
+    build:
+      context: ./credit-application-service
+      dockerfile: Dockerfile
+    container_name: credit-application-service
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://db:3306/coopcredit_db?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true
+      SPRING_DATASOURCE_USERNAME: coopcredit
+      SPRING_DATASOURCE_PASSWORD: coopcredit
+      RISK_CENTRAL_URL: http://risk-central-mock-service:8081/risk-evaluation
+      SPRING_FLYWAY_ENABLED: "true"
+    ports:
+      - "8080:8080"
+    depends_on:
+      db:
+        condition: service_healthy
+      risk-central-mock-service:
+        condition: service_started
+    networks:
+      - coopcredit-network
+    healthcheck:
+      test: ["CMD", "wget", "--quiet", "--tries=1", "--spider", "http://localhost:8080/actuator/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 60s
+    restart: unless-stopped
+
+  # Prometheus - Recolección de Métricas
+  prometheus:
+    image: prom/prometheus:v2.50.0
+    container_name: coopcredit-prometheus
+    ports:
+      - "9090:9090"
+    volumes:
+      - ./monitoring/prometheus.yml:/etc/prometheus/prometheus.yml
+      - prometheus_data:/prometheus
+    command:
+      - '--config.file=/etc/prometheus/prometheus.yml'
+      - '--storage.tsdb.path=/prometheus'
+      - '--storage.tsdb.retention.time=15d'
+      - '--web.console.libraries=/usr/share/prometheus/console_libraries'
+      - '--web.console.templates=/usr/share/prometheus/consoles'
+      - '--web.enable-lifecycle'
+    networks:
+      - coopcredit-network
+    depends_on:
+      - credit-application-service
+    restart: unless-stopped
+
+  # Grafana - Visualización de Métricas
+  grafana:
+    image: grafana/grafana:11.0.0
+    container_name: coopcredit-grafana
+    ports:
+      - "3000:3000"
+    environment:
+      - GF_SECURITY_ADMIN_USER=admin
+      - GF_SECURITY_ADMIN_PASSWORD=admin123
+      - GF_INSTALL_PLUGINS=
+      - GF_SERVER_ROOT_URL=http://localhost:3000
+      - GF_USERS_ALLOW_SIGN_UP=false
+    volumes:
+      - grafana_data:/var/lib/grafana
+      - ./monitoring/grafana/provisioning:/etc/grafana/provisioning
+      - ./monitoring/grafana/dashboards:/var/lib/grafana/dashboards
+    networks:
+      - coopcredit-network
+    depends_on:
+      - prometheus
+    restart: unless-stopped
+
+networks:
+  coopcredit-network:
+    driver: bridge
+
+volumes:
+  mysql_data:
+    driver: local
+  prometheus_data:
+    driver: local
+  grafana_data:
+    driver: local
