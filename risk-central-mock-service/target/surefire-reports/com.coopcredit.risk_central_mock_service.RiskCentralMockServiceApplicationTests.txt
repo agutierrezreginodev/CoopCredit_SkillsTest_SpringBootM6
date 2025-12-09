@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: com.coopcredit.risk_central_mock_service.RiskCentralMockServiceApplicationTests
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.506 s -- in com.coopcredit.risk_central_mock_service.RiskCentralMockServiceApplicationTests

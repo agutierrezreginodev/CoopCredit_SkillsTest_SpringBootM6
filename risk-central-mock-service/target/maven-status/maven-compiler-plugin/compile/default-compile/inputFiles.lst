@@ -1,0 +1,5 @@
+/home/Coder/CoopCredit-System/risk-central-mock-service/src/main/java/com/coopcredit/risk_central_mock_service/RiskCentralMockServiceApplication.java
+/home/Coder/CoopCredit-System/risk-central-mock-service/src/main/java/com/coopcredit/risk_central_mock_service/controller/RiskEvaluationController.java
+/home/Coder/CoopCredit-System/risk-central-mock-service/src/main/java/com/coopcredit/risk_central_mock_service/dto/RiskEvaluationRequest.java
+/home/Coder/CoopCredit-System/risk-central-mock-service/src/main/java/com/coopcredit/risk_central_mock_service/dto/RiskEvaluationResponse.java
+/home/Coder/CoopCredit-System/risk-central-mock-service/src/main/java/com/coopcredit/risk_central_mock_service/service/RiskEvaluationService.java

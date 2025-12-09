@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: risk-central-mock-service
+
+server:
+  port: 8081
+
+logging:
+  level:
+    root: INFO
+    com.coopcredit: DEBUG
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss} - %msg%n"
