@@ -13,3 +13,30 @@ services:
     plan: free
     region: oregon
     autoDeploy: true
+  
+  - type: web
+    name: credit-application-service
+    runtime: docker
+    dockerfilePath: ./credit-application-service/Dockerfile
+    dockerContext: ./credit-application-service
+    envVars:
+      - key: JAVA_OPTS
+        value: "-Xmx512m -Xms256m"
+      - key: SERVER_PORT
+        value: "8080"
+      - key: SPRING_PROFILES_ACTIVE
+        value: "prod"
+      - key: DB_HOST
+        value: "localhost"
+      - key: DB_PORT
+        value: "3306"
+      - key: DB_NAME
+        value: "creditdb"
+      - key: JWT_SECRET
+        generateValue: true
+      - key: RISK_CENTRAL_URL
+        value: "https://risk-central-mock-service.onrender.com"
+    healthCheckPath: /actuator/health
+    plan: free
+    region: oregon
+    autoDeploy: true
