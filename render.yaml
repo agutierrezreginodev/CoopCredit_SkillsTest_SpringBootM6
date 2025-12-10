@@ -4,8 +4,6 @@ services:
     name: coopcredit-postgres
     plan: free
     region: oregon
-    databaseName: coopcredit_db
-    databaseUser: coopcredit
 
   # Risk Central Mock Service
   - type: web
