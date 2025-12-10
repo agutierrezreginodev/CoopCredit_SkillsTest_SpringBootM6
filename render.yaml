@@ -1,10 +1,11 @@
-services:
-  # PostgreSQL Database
-  - type: pserv
-    name: coopcredit-postgres
+databases:
+  - name: coopcredit-postgres
+    databaseName: coopcredit_db
+    user: coopcredit
     plan: free
     region: oregon
 
+services:
   # Risk Central Mock Service
   - type: web
     name: risk-central-mock-service
