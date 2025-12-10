@@ -5,8 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="293ab6ee-5a8f-475e-9f50-f9055202f388" name="Changes" comment="Risk Central and Credit Application Microservices Development.">
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GRAFANA_INTEGRATION_GUIDE.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GRAFANA_SETUP_SUMMARY.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/RENDER_DEPLOYMENT.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/credit-application-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/credit-application-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/credit-application-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/credit-application-service/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/credit-application-service/src/main/resources/db/migration/V1__initial_schema.sql" beforeDir="false" afterPath="$PROJECT_DIR$/credit-application-service/src/main/resources/db/migration/V1__initial_schema.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/credit-application-service/src/main/resources/db/migration/V2__add_constraints.sql" beforeDir="false" afterPath="$PROJECT_DIR$/credit-application-service/src/main/resources/db/migration/V2__add_constraints.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/diagrams.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/manage.sh" beforeDir="false" afterPath="$PROJECT_DIR$/manage.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/render.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/render.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,6 +40,10 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="KubernetesApiPersistence"><![CDATA[{}]]></component>
+  <component name="KubernetesApiProvider"><![CDATA[{
+  "isMigrated": true
+}]]></component>
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="CurrentFile" />
   </component>
@@ -42,6 +58,8 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "Notification.DisplayName-DoNotAsk-DatabaseConfigFileWatcher.found": "New/updated database configurations found",
+    "Notification.DoNotAsk-DatabaseConfigFileWatcher.found": "true",
     "RequestMappingsPanelOrder0": "0",
     "RequestMappingsPanelOrder1": "1",
     "RequestMappingsPanelWidth0": "75",
@@ -49,11 +67,12 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
     "RunOnceActivity.git.unshallow": "true",
-    "SHELLCHECK.PATH": "/home/Coder/.local/share/JetBrains/IntelliJIdea2025.2/Shell Script/shellcheck",
+    "SHELLCHECK.PATH": "C:\\Users\\HP1\\AppData\\Roaming\\JetBrains\\IntelliJIdea2025.2\\plugins\\Shell Script\\shellcheck.exe",
     "Spring Boot.CreditApplicationServiceApplication.executor": "Run",
-    "git-widget-placeholder": "develop",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/home/Coder/CoopCredit-System",
+    "last_opened_file_path": "C:/Users/HP1/Desktop/CoopCredit/CoopCredit_SkillsTest_SpringBootM6",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -110,7 +129,7 @@
       <option name="ALTERNATIVE_JRE_PATH" value="BUNDLED" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
-      <module name="Core Microservice" />
+      <module name="credit-application-service" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.coopcredit.credit_application_service.CreditApplicationServiceApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -167,6 +186,9 @@
       <workItem from="1765316883410" duration="4000" />
       <workItem from="1765316894519" duration="5735000" />
       <workItem from="1765322791535" duration="651000" />
+      <workItem from="1765340148027" duration="74000" />
+      <workItem from="1765340242915" duration="2073000" />
+      <workItem from="1765374452666" duration="3666000" />
     </task>
     <task id="LOCAL-00001" summary="Base SpringBoot Project">
       <option name="closed" value="true" />

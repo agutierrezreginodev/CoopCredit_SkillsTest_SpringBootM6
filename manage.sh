@@ -5,11 +5,11 @@
 # ============================================================================
 # Uso: ./manage.sh [comando]
 # Comandos:
-#   start         - Inicia todo el sistema (MySQL + Risk Central + API)
+#   start         - Inicia todo el sistema (PostgreSQL + Risk Central + API)
 #   stop          - Detiene todos los servicios
 #   restart       - Reinicia todo el sistema
 #   status        - Muestra el estado de los servicios
-#   mysql         - Solo inicia MySQL
+#   postgres      - Solo inicia PostgreSQL
 #   mock          - Solo inicia Risk Central Mock
 #   docker        - Usa Docker Compose para todo
 #   logs          - Muestra los logs de los servicios
@@ -58,8 +58,8 @@ print_info() {
     echo -e "${BLUE}ℹ️  $1${NC}"
 }
 
-check_mysql() {
-    docker exec coopcredit-mysql mysqladmin ping -h localhost -u root -proot > /dev/null 2>&1
+check_postgres() {
+    docker exec coopcredit-postgres pg_isready -h localhost -U coopcredit > /dev/null 2>&1
     return $?
 }
 
@@ -77,32 +77,31 @@ check_api() {
 # Funciones de Gestión
 # ============================================================================
 
-start_mysql() {
-    print_header "📦 Iniciando MySQL"
+start_postgres() {
+    print_header "📦 Iniciando PostgreSQL"
     
-    if check_mysql; then
-        print_success "MySQL ya está corriendo"
+    if check_postgres; then
+        print_success "PostgreSQL ya está corriendo"
         return 0
     fi
     
-    echo "🐬 Iniciando MySQL con Docker..."
+    echo "🐘 Iniciando PostgreSQL con Docker..."
     
     # Detener contenedor existente
-    docker stop coopcredit-mysql 2>/dev/null || true
-    docker rm coopcredit-mysql 2>/dev/null || true
+    docker stop coopcredit-postgres 2>/dev/null || true
+    docker rm coopcredit-postgres 2>/dev/null || true
     
-    # Iniciar MySQL
+    # Iniciar PostgreSQL
     docker run -d \
-      --name coopcredit-mysql \
-      -e MYSQL_ROOT_PASSWORD=root \
-      -e MYSQL_DATABASE=coopcredit_db \
-      -e MYSQL_USER=coopcredit \
-      -e MYSQL_PASSWORD=coopcredit \
-      -p 3306:3306 \
-      mysql:8.0 > /dev/null 2>&1
+      --name coopcredit-postgres \
+      -e POSTGRES_DB=coopcredit_db \
+      -e POSTGRES_USER=coopcredit \
+      -e POSTGRES_PASSWORD=coopcredit \
+      -p 5432:5432 \
+      postgres:18 > /dev/null 2>&1
     
     if [ $? -ne 0 ]; then
-        print_error "Error al iniciar MySQL"
+        print_error "Error al iniciar PostgreSQL"
         echo ""
         print_info "Intenta ejecutar con sudo o añade tu usuario al grupo docker:"
         echo "  sudo usermod -aG docker \$USER"
@@ -110,9 +109,9 @@ start_mysql() {
     fi
     
     # Esperar a que esté listo
-    echo "⏳ Esperando a que MySQL esté listo..."
+    echo "⏳ Esperando a que PostgreSQL esté listo..."
     COUNTER=0
-    until check_mysql || [ $COUNTER -eq 30 ]; do
+    until check_postgres || [ $COUNTER -eq 30 ]; do
         printf "."
         sleep 2
         ((COUNTER++))
@@ -120,11 +119,11 @@ start_mysql() {
     echo ""
     
     if [ $COUNTER -eq 30 ]; then
-        print_error "MySQL no respondió en 30 segundos"
+        print_error "PostgreSQL no respondió en 30 segundos"
         exit 1
     fi
     
-    print_success "MySQL listo en localhost:3306"
+    print_success "PostgreSQL listo en localhost:5432"
 }
 
 start_risk_central() {
@@ -214,7 +213,7 @@ start_api() {
 start_all() {
     print_header "🚀 Sistema CoopCredit - Inicio Completo"
     
-    start_mysql
+    start_postgres
     start_risk_central
     start_api
     
@@ -222,7 +221,7 @@ start_all() {
     
     echo "📊 Servicios disponibles:"
     echo ""
-    echo "  🗄️  MySQL:                   localhost:3306"
+    echo "  🗄️  PostgreSQL:              localhost:5432"
     echo "  📡 Risk Central Mock:        http://localhost:8081"
     echo "       Health:                 http://localhost:8081/health"
     echo ""
@@ -256,10 +255,10 @@ stop_all() {
         rm /tmp/risk-central.pid
     fi
     
-    # Detener MySQL
-    echo "🔴 Deteniendo MySQL..."
-    docker stop coopcredit-mysql 2>/dev/null || true
-    docker rm coopcredit-mysql 2>/dev/null || true
+    # Detener PostgreSQL
+    echo "🔴 Deteniendo PostgreSQL..."
+    docker stop coopcredit-postgres 2>/dev/null || true
+    docker rm coopcredit-postgres 2>/dev/null || true
     
     echo ""
     print_success "Todos los servicios detenidos"
@@ -269,9 +268,9 @@ stop_all() {
 show_status() {
     print_header "📊 Estado de los Servicios"
     
-    echo "MySQL:"
-    if check_mysql; then
-        print_success "Corriendo en localhost:3306"
+    echo "PostgreSQL:"
+    if check_postgres; then
+        print_success "Corriendo en localhost:5432"
     else
         print_error "No está corriendo"
     fi
@@ -306,7 +305,7 @@ show_logs() {
     print_header "📋 Logs de los Servicios"
     
     echo "Selecciona el servicio:"
-    echo "  1) MySQL"
+    echo "  1) PostgreSQL"
     echo "  2) Risk Central Mock"
     echo "  3) Credit Application API"
     echo "  4) Todos (tail -f)"
@@ -315,7 +314,7 @@ show_logs() {
     
     case $option in
         1)
-            docker logs -f coopcredit-mysql
+            docker logs -f coopcredit-postgres
             ;;
         2)
             if [ -f /tmp/risk-central.log ]; then
@@ -333,7 +332,7 @@ show_logs() {
             ;;
         4)
             tail -f /tmp/risk-central.log /tmp/credit-api.log 2>/dev/null &
-            docker logs -f coopcredit-mysql
+            docker logs -f coopcredit-postgres
             ;;
         *)
             print_error "Opción inválida"
@@ -376,7 +375,7 @@ clean_all() {
     stop_all
     
     echo "🗑️  Eliminando contenedores Docker..."
-    docker rm -f coopcredit-mysql 2>/dev/null || true
+    docker rm -f coopcredit-postgres 2>/dev/null || true
     
     echo "🗑️  Limpiando compilaciones Maven..."
     cd "$API_DIR" && ./mvnw clean > /dev/null 2>&1 || true
@@ -401,11 +400,11 @@ show_help() {
     echo ""
     echo "Comandos disponibles:"
     echo ""
-    echo "  start         - Inicia todo el sistema (MySQL + Risk Central + API)"
+    echo "  start         - Inicia todo el sistema (PostgreSQL + Risk Central + API)"
     echo "  stop          - Detiene todos los servicios"
     echo "  restart       - Reinicia todo el sistema"
     echo "  status        - Muestra el estado de los servicios"
-    echo "  mysql         - Solo inicia MySQL"
+    echo "  postgres      - Solo inicia PostgreSQL"
     echo "  mock          - Solo inicia Risk Central Mock"
     echo "  docker        - Usa Docker Compose para todo"
     echo "  logs          - Muestra los logs de los servicios"
@@ -440,11 +439,11 @@ case "${1:-help}" in
     status)
         show_status
         ;;
-    mysql)
-        start_mysql
+    postgres)
+        start_postgres
         ;;
     mock)
-        start_mysql
+        start_postgres
         start_risk_central
         ;;
     docker)

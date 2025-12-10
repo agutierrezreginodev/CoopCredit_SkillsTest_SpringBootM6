@@ -1,4 +1,20 @@
 services:
+  # PostgreSQL Database
+  - type: pserv
+    name: coopcredit-postgres
+    runtime: postgres
+    plan: free
+    region: oregon
+    ipAllowList: []
+    envVars:
+      - key: POSTGRES_DB
+        value: "coopcredit_db"
+      - key: POSTGRES_USER
+        value: "coopcredit"
+      - key: POSTGRES_PASSWORD
+        generateValue: true
+
+  # Risk Central Mock Service
   - type: web
     name: risk-central-mock-service
     runtime: docker
@@ -14,11 +30,15 @@ services:
     region: oregon
     autoDeploy: true
   
+  # Credit Application Service
   - type: web
     name: credit-application-service
     runtime: docker
     dockerfilePath: ./credit-application-service/Dockerfile
     dockerContext: ./credit-application-service
+    depends_on:
+      - coopcredit-postgres
+      - risk-central-mock-service
     envVars:
       - key: JAVA_OPTS
         value: "-Xmx512m -Xms256m"
@@ -26,12 +46,20 @@ services:
         value: "8080"
       - key: SPRING_PROFILES_ACTIVE
         value: "prod"
-      - key: DB_HOST
-        value: "localhost"
-      - key: DB_PORT
-        value: "3306"
-      - key: DB_NAME
-        value: "creditdb"
+      - key: SPRING_DATASOURCE_URL
+        fromDatabase:
+          name: coopcredit-postgres
+          property: connectionString
+      - key: SPRING_DATASOURCE_USERNAME
+        value: "coopcredit"
+      - key: SPRING_DATASOURCE_PASSWORD
+        fromDatabase:
+          name: coopcredit-postgres
+          envVarKey: POSTGRES_PASSWORD
+      - key: SPRING_JPA_HIBERNATE_DDL_AUTO
+        value: "validate"
+      - key: SPRING_FLYWAY_ENABLED
+        value: "true"
       - key: JWT_SECRET
         generateValue: true
       - key: RISK_CENTRAL_URL
