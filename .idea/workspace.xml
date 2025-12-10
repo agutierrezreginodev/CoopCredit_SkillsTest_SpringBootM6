@@ -4,7 +4,117 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="293ab6ee-5a8f-475e-9f50-f9055202f388" name="Changes" comment="Risk Central and Credit Application Microservices Development." />
+    <list default="true" id="293ab6ee-5a8f-475e-9f50-f9055202f388" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/credit-application-service/src/main/java/com/coopcredit/credit_application_service/infrastructure/config/OpenApiConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/credit-application-service/src/main/java/com/coopcredit/credit_application_service/infrastructure/config/OpenApiConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/credit-application-service/src/main/java/com/coopcredit/credit_application_service/infrastructure/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/credit-application-service/src/main/java/com/coopcredit/credit_application_service/infrastructure/config/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/credit-application-service/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/credit-application-service/target/classes/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/credit-application-service/target/classes/com/coopcredit/credit_application_service/CreditApplicationServiceApplication.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/credit-application-service/target/classes/com/coopcredit/credit_application_service/application/services/AffiliateService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/credit-application-service/target/classes/com/coopcredit/credit_application_service/application/services/AuthService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/credit-application-service/target/classes/com/coopcredit/credit_application_service/application/services/CreditApplicationService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/credit-application-service/target/classes/com/coopcredit/credit_application_service/domain/enums/AffiliateStatus.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/credit-application-service/target/classes/com/coopcredit/credit_application_service/domain/enums/ApplicationStatus.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/credit-application-service/target/classes/com/coopcredit/credit_application_service/domain/enums/RiskLevel.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/credit-application-service/target/classes/com/coopcredit/credit_application_service/domain/enums/UserRole.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/credit-application-service/target/classes/com/coopcredit/credit_application_service/domain/exceptions/BusinessRuleException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/credit-application-service/target/classes/com/coopcredit/credit_application_service/domain/exceptions/DomainException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/credit-application-service/target/classes/com/coopcredit/credit_application_service/domain/exceptions/ResourceNotFoundException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/credit-application-service/target/classes/com/coopcredit/credit_application_service/domain/model/Affiliate$AffiliateBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/credit-application-service/target/classes/com/coopcredit/credit_application_service/domain/model/Affiliate.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/credit-application-service/target/classes/com/coopcredit/credit_application_service/domain/model/CreditApplication$CreditApplicationBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/credit-application-service/target/classes/com/coopcredit/credit_application_service/domain/model/CreditApplication.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/credit-application-service/target/classes/com/coopcredit/credit_application_service/domain/model/RiskEvaluation$RiskEvaluationBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/credit-application-service/target/classes/com/coopcredit/credit_application_service/domain/model/RiskEvaluation.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/credit-application-service/target/classes/com/coopcredit/credit_application_service/domain/model/User$UserBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/credit-application-service/target/classes/com/coopcredit/credit_application_service/domain/model/User.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/credit-application-service/target/classes/com/coopcredit/credit_application_service/domain/ports/in/AffiliateUseCase.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/credit-application-service/target/classes/com/coopcredit/credit_application_service/domain/ports/in/AuthUseCase.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/credit-application-service/target/classes/com/coopcredit/credit_application_service/domain/ports/in/CreditApplicationUseCase.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/credit-application-service/target/classes/com/coopcredit/credit_application_service/domain/ports/out/AffiliateRepositoryPort.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/credit-application-service/target/classes/com/coopcredit/credit_application_service/domain/ports/out/CreditApplicationRepositoryPort.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/credit-application-service/target/classes/com/coopcredit/credit_application_service/domain/ports/out/RiskCentralPort.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/credit-application-service/target/classes/com/coopcredit/credit_application_service/domain/ports/out/UserRepositoryPort.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/credit-application-service/target/classes/com/coopcredit/credit_application_service/infrastructure/adapters/jpa/AffiliateRepositoryAdapter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/credit-application-service/target/classes/com/coopcredit/credit_application_service/infrastructure/adapters/jpa/CreditApplicationRepositoryAdapter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/credit-application-service/target/classes/com/coopcredit/credit_application_service/infrastructure/adapters/jpa/UserRepositoryAdapter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/credit-application-service/target/classes/com/coopcredit/credit_application_service/infrastructure/adapters/jpa/entities/AffiliateEntity$AffiliateEntityBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/credit-application-service/target/classes/com/coopcredit/credit_application_service/infrastructure/adapters/jpa/entities/AffiliateEntity.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/credit-application-service/target/classes/com/coopcredit/credit_application_service/infrastructure/adapters/jpa/entities/CreditApplicationEntity$CreditApplicationEntityBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/credit-application-service/target/classes/com/coopcredit/credit_application_service/infrastructure/adapters/jpa/entities/CreditApplicationEntity.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/credit-application-service/target/classes/com/coopcredit/credit_application_service/infrastructure/adapters/jpa/entities/RiskEvaluationEntity$RiskEvaluationEntityBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/credit-application-service/target/classes/com/coopcredit/credit_application_service/infrastructure/adapters/jpa/entities/RiskEvaluationEntity.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/credit-application-service/target/classes/com/coopcredit/credit_application_service/infrastructure/adapters/jpa/entities/UserEntity$UserEntityBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/credit-application-service/target/classes/com/coopcredit/credit_application_service/infrastructure/adapters/jpa/entities/UserEntity.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/credit-application-service/target/classes/com/coopcredit/credit_application_service/infrastructure/adapters/jpa/repositories/AffiliateJpaRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/credit-application-service/target/classes/com/coopcredit/credit_application_service/infrastructure/adapters/jpa/repositories/CreditApplicationJpaRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/credit-application-service/target/classes/com/coopcredit/credit_application_service/infrastructure/adapters/jpa/repositories/UserJpaRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/credit-application-service/target/classes/com/coopcredit/credit_application_service/infrastructure/adapters/rest/RiskCentralAdapter$RiskEvaluationResponse.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/credit-application-service/target/classes/com/coopcredit/credit_application_service/infrastructure/adapters/rest/RiskCentralAdapter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/credit-application-service/target/classes/com/coopcredit/credit_application_service/infrastructure/config/ApplicationConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/credit-application-service/target/classes/com/coopcredit/credit_application_service/infrastructure/config/OpenApiConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/credit-application-service/target/classes/com/coopcredit/credit_application_service/infrastructure/config/SecurityConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/credit-application-service/target/classes/com/coopcredit/credit_application_service/infrastructure/controllers/AffiliateController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/credit-application-service/target/classes/com/coopcredit/credit_application_service/infrastructure/controllers/AuthController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/credit-application-service/target/classes/com/coopcredit/credit_application_service/infrastructure/controllers/CreditApplicationController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/credit-application-service/target/classes/com/coopcredit/credit_application_service/infrastructure/exceptions/GlobalExceptionHandler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/credit-application-service/target/classes/com/coopcredit/credit_application_service/infrastructure/security/filters/JwtAuthenticationFilter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/credit-application-service/target/classes/com/coopcredit/credit_application_service/infrastructure/security/services/JwtService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/credit-application-service/target/classes/com/coopcredit/credit_application_service/infrastructure/web/dto/AffiliateDto$AffiliateDtoBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/credit-application-service/target/classes/com/coopcredit/credit_application_service/infrastructure/web/dto/AffiliateDto.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/credit-application-service/target/classes/com/coopcredit/credit_application_service/infrastructure/web/dto/AuthResponse$AuthResponseBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/credit-application-service/target/classes/com/coopcredit/credit_application_service/infrastructure/web/dto/AuthResponse.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/credit-application-service/target/classes/com/coopcredit/credit_application_service/infrastructure/web/dto/CreditApplicationDto$CreditApplicationDtoBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/credit-application-service/target/classes/com/coopcredit/credit_application_service/infrastructure/web/dto/CreditApplicationDto.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/credit-application-service/target/classes/com/coopcredit/credit_application_service/infrastructure/web/dto/LoginRequest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/credit-application-service/target/classes/com/coopcredit/credit_application_service/infrastructure/web/dto/RegisterRequest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/credit-application-service/target/classes/com/coopcredit/credit_application_service/infrastructure/web/dto/RiskEvaluationDto$RiskEvaluationDtoBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/credit-application-service/target/classes/com/coopcredit/credit_application_service/infrastructure/web/dto/RiskEvaluationDto.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/credit-application-service/target/classes/com/coopcredit/credit_application_service/infrastructure/web/mapper/AffiliateDtoMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/credit-application-service/target/classes/com/coopcredit/credit_application_service/infrastructure/web/mapper/AffiliateDtoMapperImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/credit-application-service/target/classes/com/coopcredit/credit_application_service/infrastructure/web/mapper/AffiliateMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/credit-application-service/target/classes/com/coopcredit/credit_application_service/infrastructure/web/mapper/AffiliateMapperImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/credit-application-service/target/classes/com/coopcredit/credit_application_service/infrastructure/web/mapper/CreditApplicationDtoMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/credit-application-service/target/classes/com/coopcredit/credit_application_service/infrastructure/web/mapper/CreditApplicationDtoMapperImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/credit-application-service/target/classes/com/coopcredit/credit_application_service/infrastructure/web/mapper/CreditApplicationMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/credit-application-service/target/classes/com/coopcredit/credit_application_service/infrastructure/web/mapper/CreditApplicationMapperImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/credit-application-service/target/classes/com/coopcredit/credit_application_service/infrastructure/web/mapper/RiskEvaluationDtoMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/credit-application-service/target/classes/com/coopcredit/credit_application_service/infrastructure/web/mapper/RiskEvaluationDtoMapperImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/credit-application-service/target/classes/com/coopcredit/credit_application_service/infrastructure/web/mapper/RiskEvaluationMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/credit-application-service/target/classes/com/coopcredit/credit_application_service/infrastructure/web/mapper/RiskEvaluationMapperImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/credit-application-service/target/classes/com/coopcredit/credit_application_service/infrastructure/web/mapper/UserDtoMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/credit-application-service/target/classes/com/coopcredit/credit_application_service/infrastructure/web/mapper/UserDtoMapperImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/credit-application-service/target/classes/com/coopcredit/credit_application_service/infrastructure/web/mapper/UserMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/credit-application-service/target/classes/com/coopcredit/credit_application_service/infrastructure/web/mapper/UserMapperImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/credit-application-service/target/classes/db/migration/V1__initial_schema.sql" beforeDir="false" afterPath="$PROJECT_DIR$/credit-application-service/target/classes/db/migration/V1__initial_schema.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/credit-application-service/target/classes/db/migration/V2__add_constraints.sql" beforeDir="false" afterPath="$PROJECT_DIR$/credit-application-service/target/classes/db/migration/V2__add_constraints.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/credit-application-service/target/credit-application-service-0.0.1-SNAPSHOT.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/credit-application-service/target/credit-application-service-0.0.1-SNAPSHOT.jar.original" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/credit-application-service/target/generated-sources/annotations/com/coopcredit/credit_application_service/infrastructure/web/mapper/AffiliateDtoMapperImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/credit-application-service/target/generated-sources/annotations/com/coopcredit/credit_application_service/infrastructure/web/mapper/AffiliateMapperImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/credit-application-service/target/generated-sources/annotations/com/coopcredit/credit_application_service/infrastructure/web/mapper/CreditApplicationDtoMapperImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/credit-application-service/target/generated-sources/annotations/com/coopcredit/credit_application_service/infrastructure/web/mapper/CreditApplicationMapperImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/credit-application-service/target/generated-sources/annotations/com/coopcredit/credit_application_service/infrastructure/web/mapper/RiskEvaluationDtoMapperImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/credit-application-service/target/generated-sources/annotations/com/coopcredit/credit_application_service/infrastructure/web/mapper/RiskEvaluationMapperImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/credit-application-service/target/generated-sources/annotations/com/coopcredit/credit_application_service/infrastructure/web/mapper/UserDtoMapperImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/credit-application-service/target/generated-sources/annotations/com/coopcredit/credit_application_service/infrastructure/web/mapper/UserMapperImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/credit-application-service/target/maven-archiver/pom.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/credit-application-service/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/credit-application-service/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/credit-application-service/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/render.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/render.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/risk-central-mock-service/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/risk-central-mock-service/target/classes/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/risk-central-mock-service/target/classes/com/coopcredit/risk_central_mock_service/RiskCentralMockServiceApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/risk-central-mock-service/target/classes/com/coopcredit/risk_central_mock_service/RiskCentralMockServiceApplication.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/risk-central-mock-service/target/classes/com/coopcredit/risk_central_mock_service/controller/RiskEvaluationController.class" beforeDir="false" afterPath="$PROJECT_DIR$/risk-central-mock-service/target/classes/com/coopcredit/risk_central_mock_service/controller/RiskEvaluationController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/risk-central-mock-service/target/classes/com/coopcredit/risk_central_mock_service/dto/RiskEvaluationRequest.class" beforeDir="false" afterPath="$PROJECT_DIR$/risk-central-mock-service/target/classes/com/coopcredit/risk_central_mock_service/dto/RiskEvaluationRequest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/risk-central-mock-service/target/classes/com/coopcredit/risk_central_mock_service/dto/RiskEvaluationResponse$RiskEvaluationResponseBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/risk-central-mock-service/target/classes/com/coopcredit/risk_central_mock_service/dto/RiskEvaluationResponse$RiskEvaluationResponseBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/risk-central-mock-service/target/classes/com/coopcredit/risk_central_mock_service/dto/RiskEvaluationResponse.class" beforeDir="false" afterPath="$PROJECT_DIR$/risk-central-mock-service/target/classes/com/coopcredit/risk_central_mock_service/dto/RiskEvaluationResponse.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/risk-central-mock-service/target/classes/com/coopcredit/risk_central_mock_service/service/RiskEvaluationService.class" beforeDir="false" afterPath="$PROJECT_DIR$/risk-central-mock-service/target/classes/com/coopcredit/risk_central_mock_service/service/RiskEvaluationService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/risk-central-mock-service/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/risk-central-mock-service/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/risk-central-mock-service/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/risk-central-mock-service/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/risk-central-mock-service/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/risk-central-mock-service/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/risk-central-mock-service/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/risk-central-mock-service/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/risk-central-mock-service/target/test-classes/com/coopcredit/risk_central_mock_service/RiskCentralMockServiceApplicationTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/risk-central-mock-service/target/test-classes/com/coopcredit/risk_central_mock_service/RiskCentralMockServiceApplicationTests.class" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -25,10 +135,10 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="KubernetesApiPersistence"><![CDATA[{}]]></component>
-  <component name="KubernetesApiProvider"><![CDATA[{
-  "isMigrated": true
-}]]></component>
+  <component name="KubernetesApiPersistence">{}</component>
+  <component name="KubernetesApiProvider">{
+  &quot;isMigrated&quot;: true
+}</component>
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="CurrentFile" />
   </component>
@@ -40,37 +150,37 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "Notification.DisplayName-DoNotAsk-DatabaseConfigFileWatcher.found": "New/updated database configurations found",
-    "Notification.DoNotAsk-DatabaseConfigFileWatcher.found": "true",
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "SHELLCHECK.PATH": "C:\\Users\\HP1\\AppData\\Roaming\\JetBrains\\IntelliJIdea2025.2\\plugins\\Shell Script\\shellcheck.exe",
-    "Spring Boot.CreditApplicationServiceApplication.executor": "Run",
-    "git-widget-placeholder": "main",
-    "ignore.virus.scanning.warn.message": "true",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/HP1/Desktop/CoopCredit/CoopCredit_SkillsTest_SpringBootM6",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.2",
-    "run.configurations.included.in.services": "true",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;Notification.DisplayName-DoNotAsk-DatabaseConfigFileWatcher.found&quot;: &quot;New/updated database configurations found&quot;,
+    &quot;Notification.DoNotAsk-DatabaseConfigFileWatcher.found&quot;: &quot;true&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;SHELLCHECK.PATH&quot;: &quot;C:\\Users\\HP1\\AppData\\Roaming\\JetBrains\\IntelliJIdea2025.2\\plugins\\Shell Script\\shellcheck.exe&quot;,
+    &quot;Spring Boot.CreditApplicationServiceApplication.executor&quot;: &quot;Run&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/HP1/Desktop/CoopCredit/CoopCredit_SkillsTest_SpringBootM6&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;run.configurations.included.in.services&quot;: &quot;true&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/credit-application-service/src/test.bak/java/com/coopcredit/credit_application_service" />
@@ -173,7 +283,8 @@
       <workItem from="1765322791535" duration="651000" />
       <workItem from="1765340148027" duration="74000" />
       <workItem from="1765340242915" duration="2073000" />
-      <workItem from="1765374452666" duration="4115000" />
+      <workItem from="1765374452666" duration="7290000" />
+      <workItem from="1765389267348" duration="1899000" />
     </task>
     <task id="LOCAL-00001" summary="Base SpringBoot Project">
       <option name="closed" value="true" />

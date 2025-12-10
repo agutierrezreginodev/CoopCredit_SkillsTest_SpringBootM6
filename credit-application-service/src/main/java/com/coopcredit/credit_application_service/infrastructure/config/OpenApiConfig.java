@@ -6,6 +6,9 @@ import io.swagger.v3.oas.annotations.info.Contact;
 import io.swagger.v3.oas.annotations.info.Info;
 import io.swagger.v3.oas.annotations.security.SecurityScheme;
 import io.swagger.v3.oas.annotations.servers.Server;
+import io.swagger.v3.oas.models.OpenAPI;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 /**
@@ -24,7 +27,7 @@ import org.springframework.context.annotation.Configuration;
     ),
     servers = {
         @Server(url = "http://localhost:8080", description = "Servidor Local"),
-        @Server(url = "http://localhost:8080", description = "Servidor de Desarrollo")
+        @Server(url = "https://credit-application-service-qzh1.onrender.com", description = "Servidor de Producción (Render)")
     }
 )
 @SecurityScheme(
@@ -34,4 +37,21 @@ import org.springframework.context.annotation.Configuration;
     scheme = "bearer"
 )
 public class OpenApiConfig {
+
+    @Value("${server.url:}")
+    private String serverUrl;
+
+    @Bean
+    public OpenAPI customOpenAPI() {
+        OpenAPI openAPI = new OpenAPI();
+        
+        // Si hay un server URL configurado (desde variable de entorno), lo usamos
+        if (serverUrl != null && !serverUrl.isEmpty()) {
+            openAPI.addServersItem(new io.swagger.v3.oas.models.servers.Server()
+                .url(serverUrl)
+                .description("Servidor Configurado"));
+        }
+        
+        return openAPI;
+    }
 }

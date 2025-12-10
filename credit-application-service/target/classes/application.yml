@@ -2,12 +2,12 @@ spring:
   application:
     name: credit-application-service
   
-  # Configuración de base de datos MySQL
+  # Configuración de base de datos PostgreSQL
   datasource:
-    url: jdbc:mysql://localhost:3306/coopcredit_db?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true
+    url: jdbc:postgresql://localhost:5432/coopcredit_db
     username: coopcredit
     password: coopcredit
-    driver-class-name: com.mysql.cj.jdbc.Driver
+    driver-class-name: org.postgresql.Driver
     hikari:
       maximum-pool-size: 10
       minimum-idle: 5
@@ -21,7 +21,7 @@ spring:
     properties:
       hibernate:
         format_sql: true
-        dialect: org.hibernate.dialect.MySQLDialect
+        dialect: org.hibernate.dialect.PostgreSQLDialect
         jdbc:
           batch_size: 20
         order_inserts: true
@@ -105,3 +105,38 @@ springdoc:
   swagger-ui:
     path: /swagger-ui.html
     enabled: true
+
+---
+# Perfil de producción para Render
+spring:
+  config:
+    activate:
+      on-profile: prod
+  datasource:
+    url: jdbc:postgresql://${POSTGRES_HOST}:${POSTGRES_PORT}/${POSTGRES_DATABASE}
+    username: ${SPRING_DATASOURCE_USERNAME}
+    password: ${SPRING_DATASOURCE_PASSWORD}
+  jpa:
+    show-sql: false
+  
+# Configuración JWT para producción
+jwt:
+  secret: ${JWT_SECRET}
+
+# Configuración de servicio externo de riesgo para producción
+risk:
+  central:
+    url: ${RISK_CENTRAL_URL}
+
+# Configuración de CORS para producción
+cors:
+  allowed-origins: ${CORS_ALLOWED_ORIGINS:*}
+
+# Configuración de logging para producción
+logging:
+  level:
+    root: INFO
+    com.coopcredit: INFO
+    org.springframework.security: WARN
+    org.hibernate.SQL: WARN
+    org.hibernate.type.descriptor.sql.BasicBinder: WARN
