@@ -36,9 +36,6 @@ services:
     runtime: docker
     dockerfilePath: ./credit-application-service/Dockerfile
     dockerContext: ./credit-application-service
-    depends_on:
-      - coopcredit-postgres
-      - risk-central-mock-service
     envVars:
       - key: JAVA_OPTS
         value: "-Xmx512m -Xms256m"
