@@ -4,22 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="293ab6ee-5a8f-475e-9f50-f9055202f388" name="Changes" comment="Risk Central and Credit Application Microservices Development.">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GRAFANA_INTEGRATION_GUIDE.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GRAFANA_SETUP_SUMMARY.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RENDER_DEPLOYMENT.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/credit-application-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/credit-application-service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/credit-application-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/credit-application-service/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/credit-application-service/src/main/resources/db/migration/V1__initial_schema.sql" beforeDir="false" afterPath="$PROJECT_DIR$/credit-application-service/src/main/resources/db/migration/V1__initial_schema.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/credit-application-service/src/main/resources/db/migration/V2__add_constraints.sql" beforeDir="false" afterPath="$PROJECT_DIR$/credit-application-service/src/main/resources/db/migration/V2__add_constraints.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/diagrams.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/manage.sh" beforeDir="false" afterPath="$PROJECT_DIR$/manage.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/render.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/render.yaml" afterDir="false" />
-    </list>
+    <list default="true" id="293ab6ee-5a8f-475e-9f50-f9055202f388" name="Changes" comment="Risk Central and Credit Application Microservices Development." />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -188,7 +173,7 @@
       <workItem from="1765322791535" duration="651000" />
       <workItem from="1765340148027" duration="74000" />
       <workItem from="1765340242915" duration="2073000" />
-      <workItem from="1765374452666" duration="3666000" />
+      <workItem from="1765374452666" duration="4115000" />
     </task>
     <task id="LOCAL-00001" summary="Base SpringBoot Project">
       <option name="closed" value="true" />
