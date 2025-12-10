@@ -74,19 +74,43 @@ public class SecurityConfig {
     public CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration configuration = new CorsConfiguration();
         
+        // Métodos HTTP permitidos
+        configuration.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "DELETE", "OPTIONS", "PATCH"));
+        
+        // Headers permitidos (importante para JWT y Content-Type)
+        configuration.setAllowedHeaders(Arrays.asList(
+            "Authorization",
+            "Content-Type",
+            "Accept",
+            "Origin",
+            "X-Requested-With",
+            "Access-Control-Request-Method",
+            "Access-Control-Request-Headers"
+        ));
+        
+        // Headers expuestos en la respuesta
+        configuration.setExposedHeaders(Arrays.asList(
+            "Authorization",
+            "Content-Type",
+            "Access-Control-Allow-Origin",
+            "Access-Control-Allow-Credentials"
+        ));
+        
         // Configurar orígenes permitidos desde application.yml
         if (allowedOrigins.equals("*")) {
+            // En producción con wildcard: permitir cualquier origen SIN credenciales
+            // Esto es necesario porque los navegadores bloquean credentials con wildcard
             configuration.addAllowedOriginPattern("*");
             configuration.setAllowCredentials(false);
         } else {
+            // En desarrollo con orígenes específicos: permitir credenciales
             List<String> origins = Arrays.asList(allowedOrigins.split(","));
             configuration.setAllowedOrigins(origins);
             configuration.setAllowCredentials(true);
         }
         
-        configuration.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "DELETE", "OPTIONS"));
-        configuration.setAllowedHeaders(Arrays.asList("*"));
-        configuration.setExposedHeaders(Arrays.asList("Authorization", "Content-Type"));
+        // Tiempo de cache para preflight requests (1 hora)
+        configuration.setMaxAge(3600L);
         
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
         source.registerCorsConfiguration("/**", configuration);
