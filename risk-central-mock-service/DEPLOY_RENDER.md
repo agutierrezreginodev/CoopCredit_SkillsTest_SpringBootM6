@@ -88,9 +88,17 @@ Render proporciona:
 
 ## Solución de Problemas
 
+### Error: "/src": not found
+Si obtienes el error `failed to compute cache key: "/src": not found`, verifica que tu `render.yaml` tenga configurado el `dockerContext` correctamente:
+```yaml
+dockerfilePath: ./risk-central-mock-service/Dockerfile
+dockerContext: ./risk-central-mock-service
+```
+
 ### Build Fails
 ```bash
-# Verificar que el build funciona localmente
+# Verificar que el build funciona localmente (desde el directorio del servicio)
+cd risk-central-mock-service
 docker build -t risk-service .
 docker run -p 8081:8081 risk-service
 ```

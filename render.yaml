@@ -2,7 +2,8 @@ services:
   - type: web
     name: risk-central-mock-service
     runtime: docker
-    dockerfilePath: ./Dockerfile
+    dockerfilePath: ./risk-central-mock-service/Dockerfile
+    dockerContext: ./risk-central-mock-service
     envVars:
       - key: JAVA_OPTS
         value: "-Xmx512m -Xms256m"
